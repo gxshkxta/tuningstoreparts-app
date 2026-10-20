@@ -75,16 +75,19 @@
         });
     }
 
-    // Излагаме navigateTo глобално, за да го ползваме в HTML бутони
+        // Излагаме navigateTo глобално, за да го ползваме в HTML бутони
     window.appNavigate = navigateTo;
 
     // Стартиране
     document.addEventListener('DOMContentLoaded', function() {
-        initBottomNav();
-        initDrawer();
-        
-        // По подразбиране отваряме Home
-        navigateTo('home');
+        // Изчакваме много малко, за да сме сигурни, че DOM е готов
+        setTimeout(function() {
+            initBottomNav();
+            initDrawer();
+            
+            // Отваряме Home екрана
+            navigateTo('home');
+        }, 50);
     });
 
 })();
