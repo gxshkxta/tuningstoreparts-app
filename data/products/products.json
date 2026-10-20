@@ -1,0 +1,82 @@
+{
+  "parts": [
+    {
+      "id": "part-001",
+      "title": "Двигател 1.9 TDI ALH",
+      "make": "Volkswagen",
+      "model": "Golf 4",
+      "year": 2002,
+      "category": "Двигател",
+      "condition": "Употребяван",
+      "price": 435,
+      "image": ""
+    },
+    {
+      "id": "part-002",
+      "title": "Скоростна кутия 5-ст.",
+      "make": "BMW",
+      "model": "E46",
+      "year": 2003,
+      "category": "Скоростна кутия",
+      "condition": "Употребяван",
+      "price": 215,
+      "image": ""
+    },
+    {
+      "id": "part-003",
+      "title": "Фар преден десен",
+      "make": "Audi",
+      "model": "A4 B6",
+      "year": 2004,
+      "category": "Каросерия",
+      "condition": "Употребяван",
+      "price": 80,
+      "image": ""
+    },
+    {
+      "id": "part-004",
+      "title": "Амортисьор преден",
+      "make": "Opel",
+      "model": "Astra G",
+      "year": 2001,
+      "category": "Окачване",
+      "condition": "Употребяван",
+      "price": 45,
+      "image": ""
+    }
+  ],
+  "accessories": [
+    {
+      "id": "acc-001",
+      "title": "Стелки универсални",
+      "category": "Интериор",
+      "condition": "Нов",
+      "price": 23,
+      "image": ""
+    },
+    {
+      "id": "acc-002",
+      "title": "LED крушки H7",
+      "category": "Осветление",
+      "condition": "Нов",
+      "price": 33,
+      "image": ""
+    },
+    {
+      "id": "acc-003",
+      "title": "Ветробрани предни",
+      "category": "Екстериор",
+      "condition": "Нов",
+      "price": 28,
+      "image": ""
+    },
+    {
+      "id": "acc-004",
+      "title": "Ароматизатор",
+      "category": "Интериор",
+      "condition": "Нов",
+      "price": 8,
+      "image": ""
+    }
+  ]
+}

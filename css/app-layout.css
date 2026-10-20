@@ -1,0 +1,194 @@
+/* ============================================================
+   TUNINGSTOREPARTS APP — LAYOUT (Header, Bottom Nav, Screens)
+   ============================================================ */
+
+/* ---------- HEADER ---------- */
+.app-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--header-height);
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 100;
+}
+
+.app-header .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+.app-header .brand-logo {
+    width: 28px;
+    height: 28px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--text-main);
+    transition: background 0.2s;
+}
+.icon-btn:hover { background: var(--bg-main); }
+.icon-btn svg { width: 22px; height: 22px; }
+
+/* ---------- SCREENS (SPA) ---------- */
+.screen {
+    display: none;
+    padding: 20px 16px;
+    animation: fadeIn 0.3s ease;
+}
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- BOTTOM NAVIGATION ---------- */
+.bottom-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: var(--bottom-nav-height);
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+    padding-bottom: env(safe-area-inset-bottom); /* За iPhone */
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex: 1;
+    height: 100%;
+    color: var(--text-muted);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.nav-item svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+}
+.nav-item.active {
+    color: var(--accent);
+}
+.nav-item.active svg {
+    fill: var(--accent-light);
+    stroke: var(--accent);
+}
+
+/* ---------- SLIDE-IN DRAWER ---------- */
+.drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+.drawer-overlay.open { opacity: 1; visibility: visible; }
+
+.drawer {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 280px;
+    max-width: 85%;
+    background: var(--bg-surface);
+    z-index: 250;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.1);
+}
+.drawer.open { transform: translateX(0); }
+
+.drawer-header {
+    padding: 24px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.drawer-header .brand { font-size: 1.125rem; }
+
+.drawer-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 0;
+}
+.drawer-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.drawer-link:hover { background: var(--bg-main); }
+.drawer-link svg { width: 20px; height: 20px; color: var(--text-muted); }
+
+.drawer-footer {
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    background: #fafbfc;
+}
+.drawer-footer a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 0.9375rem;
+}
+
+/* Desktop скрива bottom nav и показва нормален layout */
+@media (min-width: 900px) {
+    #app-screen-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding-bottom: 40px;
+        border-left: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        min-height: 100vh;
+        background: var(--bg-main);
+    }
+    .app-header {
+        max-width: 800px;
+        margin: 0 auto;
+        border-left: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+    }
+    .bottom-nav {
+        display: none; /* Скриваме bottom nav на десктоп */
+    }
+    .screen { padding: 32px 24px; }
+}

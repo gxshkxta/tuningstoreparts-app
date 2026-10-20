@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ffffff">
+    <title>TuningStoreParts</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logo.svg">
+    <link rel="stylesheet" href="css/app-base.css">
+    <link rel="stylesheet" href="css/app-layout.css">
+    <link rel="stylesheet" href="css/app-components.css">
+</head>
+<body>
+
+    <!-- ---------- HEADER ---------- -->
+    <header class="app-header">
+        <button class="icon-btn" id="openDrawerBtn" aria-label="Меню">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <a href="#" class="brand" onclick="appNavigate('home'); return false;">
+            <img src="assets/logo/logo.svg" alt="" class="brand-logo">
+            <span>TuningStoreParts</span>
+        </a>
+
+        <div class="header-actions">
+            <a href="tel:+359881234567" class="icon-btn" aria-label="Телефон">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- ---------- MAIN APP CONTAINER ---------- -->
+    <main id="app-screen-container">
+
+        <!-- ================= SCREEN 1: HOME ================= -->
+        <section class="screen active" id="screen-home">
+            <h1 class="screen-title">Дай цена на старата си кола.</h1>
+            <p class="screen-subtitle">Попълни данните и виж ориентировъчната стойност.</p>
+
+            <div class="card">
+                <form id="calc-form">
+                    <div class="form-group">
+                        <label for="calc-region">Регион</label>
+                        <select id="calc-region" class="form-control" required>
+                            <option value="">— Изберете регион —</option>
+                            <option>София</option>
+                            <option>Пловдив</option>
+                            <option>Варна</option>
+                            <option>Бургас</option>
+                            <option>Русе</option>
+                            <option>Стара Загора</option>
+                            <option>Плевен</option>
+                            <option>Друг</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-make">Марка</label>
+                        <select id="calc-make" class="form-control" required>
+                            <option value="">— Изберете марка —</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-model">Модел</label>
+                        <select id="calc-model" class="form-control" disabled required>
+                            <option value="">— Първо изберете марка —</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="calc-year">Година</label>
+                            <select id="calc-year" class="form-control" disabled required>
+                                <option value="">— Модел —</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="calc-condition">Състояние</label>
+                            <select id="calc-condition" class="form-control" required>
+                                <option value="">— Изберете —</option>
+                                <option>В движение</option>
+                                <option>Не е в движение</option>
+                                <option>Катастрофирал</option>
+                                <option>За части</option>
+                                <option>За скрап</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Изчисли стойността</button>
+                </form>
+            </div>
+
+            <h2 class="screen-title" style="font-size: 1.125rem; margin-top: 24px;">Бързи услуги</h2>
+            <div class="grid-3">
+                <a href="#" class="quick-action" onclick="appNavigate('cars'); return false;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
+                    <span>Изкупуване</span>
+                </a>
+                <a href="#" class="quick-action" onclick="appNavigate('parts'); return false;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    <span>Авточасти</span>
+                </a>
+                <a href="#" class="quick-action" onclick="appNavigate('accessories'); return false;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span>Аксесоари</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= SCREEN 2: CARS ================= -->
+        <section class="screen" id="screen-cars">
+            <h1 class="screen-title">Изкупуване на коли</h1>
+            <p class="screen-subtitle">Купуваме стари автомобили за скрап и части.</p>
+
+            <div class="card">
+                <h3 class="card-title">Бърза оценка</h3>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 16px;">Изпратете данните за автомобила и ще получите ориентировъчна цена до 2 часа.</p>
+                <a href="#" class="btn btn-primary" onclick="appNavigate('home'); return false;">Към калкулатора</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Оценка по снимки</h3>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 16px;">Изпратете снимки и ще получите оценка без ангажимент.</p>
+                <a href="photo-estimate.html" class="btn btn-outline">Изпрати снимки</a>
+            </div>
+        </section>
+
+        <!-- ================= SCREEN 3: PARTS ================= -->
+               <section class="screen" id="screen-parts">
+            <h1 class="screen-title">Авточасти</h1>
+            <p class="screen-subtitle">Проверени части втора употреба.</p>
+
+                     <div class="search-bar">
+                <input type="text" id="search-parts" class="form-control" placeholder="Търси част (напр. двигател, фар)..." style="margin-bottom: 12px;">
+            </div>
+            <div class="filter-chips" id="filter-parts" style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 16px;">
+                <!-- Ще се попълни от JS -->
+            </div>
+            <div class="product-grid-app" id="parts-grid">
+                <!-- Зарежда се от JS -->
+            </div>
+        </section>
+
+                <!-- ================= SCREEN 4: ACCESSORIES ================= -->
+        <section class="screen" id="screen-accessories">
+            <h1 class="screen-title">Автоаксесоари</h1>
+            <p class="screen-subtitle">Практични решения за вашия автомобил.</p>
+
+            <div class="search-bar">
+                <input type="text" id="search-accessories" class="form-control" placeholder="Търси аксесоар (напр. стелки, LED)..." style="margin-bottom: 12px;">
+            </div>
+            <div class="filter-chips" id="filter-accessories" style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 16px;">
+                <!-- Ще се попълни от JS -->
+            </div>
+            <div class="product-grid-app" id="accessories-grid">
+                <!-- Зарежда се от JS -->
+            </div>
+        </section>
+
+                <!-- ================= SCREEN 5: CONTACT ================= -->
+        <section class="screen" id="screen-contact">
+            <h1 class="screen-title">Контакти</h1>
+            <p class="screen-subtitle">Свържете се с нас по удобен за вас начин.</p>
+
+            <!-- Бутони за бърз контакт -->
+            <div class="grid-3" style="margin-bottom: 24px;">
+                <a href="tel:+359881234567" class="quick-action">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>Телефон</span>
+                </a>
+                <a href="viber://chat?number=%2B359881234567" class="quick-action">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    <span>Viber</span>
+                </a>
+                <a href="https://wa.me/359881234567" class="quick-action">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Форма за съобщение -->
+            <div class="card">
+                <h3 class="card-title">Изпрати съобщение</h3>
+                <form id="contact-form-app" onsubmit="event.preventDefault(); alert('Благодарим! Ще се свържем с вас скоро.'); this.reset();">
+                    <div class="form-group">
+                        <label for="cf-name">Име</label>
+                        <input type="text" id="cf-name" class="form-control" placeholder="Вашето име" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-phone">Телефон</label>
+                        <input type="tel" id="cf-phone" class="form-control" placeholder="+359 88 123 4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-message">Съобщение</label>
+                        <textarea id="cf-message" class="form-control" rows="4" placeholder="Опишете с какво можем да помогнем..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Изпрати</button>
+                </form>
+            </div>
+        </section>
+
+                <!-- ================= SCREEN 6: PRODUCT DETAILS ================= -->
+        <section class="screen" id="screen-product-detail">
+            <!-- Бутон за връщане назад -->
+            <button class="btn btn-outline" style="width: auto; padding: 8px 16px; margin-bottom: 20px; font-size: 0.875rem;" onclick="appNavigate('parts');">
+                ← Назад към каталога
+            </button>
+
+            <div class="card" style="text-align: center; padding: 32px 20px;">
+                <!-- Голяма икона/снимка -->
+                <div id="detail-icon" style="width: 80px; height: 80px; background: var(--accent-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                    <!-- SVG ще се слага от JS -->
+                </div>
+
+                <span class="product-badge-app" id="detail-condition" style="margin: 0 auto 12px; display: inline-block;">Състояние</span>
+                <h1 class="screen-title" id="detail-title" style="font-size: 1.5rem; margin-bottom: 8px;">Заглавие</h1>
+                <p class="screen-subtitle" id="detail-meta" style="margin-bottom: 24px;">Марка Модел</p>
+
+                <div style="font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 32px;">
+                    <span id="detail-price">0</span> €
+                </div>
+
+                <button class="btn btn-primary" onclick="appNavigate('contact')">Свържи се за запитване</button>
+            </div>
+        </section>
+                <!-- ================= SCREEN 7: ABOUT ================= -->
+        <section class="screen" id="screen-about">
+            <h1 class="screen-title">За нас</h1>
+            <p class="screen-subtitle">TuningStoreParts — устойчива връзка между старите автомобили и хората, които се нуждаят от части.</p>
+
+            <div class="card">
+                <h3 class="card-title">Нашата мисия</h3>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; line-height: 1.6;">
+                    Да направим авточастите достъпни, а старите автомобили — полезни. 
+                    Всяка кола има стойност — дори когато вече не се движи.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Какво правим</h3>
+                <ul style="color: var(--text-muted); font-size: 0.9375rem; line-height: 1.8; padding-left: 20px;">
+                    <li>Изкупуваме автомобили за скрап и части</li>
+                    <li>Продаваме проверени части втора употреба</li>
+                    <li>Предлагаме аксесоари за всеки автомобил</li>
+                    <li>Насърчаваме рециклирането и повторната употреба</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= SCREEN 8: HOW IT WORKS ================= -->
+        <section class="screen" id="screen-how-it-works">
+            <h1 class="screen-title">Как работим</h1>
+            <p class="screen-subtitle">Прозрачен процес от първия контакт до финалната сделка.</p>
+
+            <div class="card">
+                <h3 class="card-title">1. Изпращате данни</h3>
+                <p style="color: var(--text-muted); font-size: 0.9375rem;">Попълвате калкулатора, изпращате снимки или ни се обаждате.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">2. Получавате оценка</h3>
+                <p style="color: var(--text-muted); font-size: 0.9375rem;">До 2 часа ви даваме ориентировъчна цена. Без ангажимент.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">3. Организираме транспорт</h3>
+                <p style="color: var(--text-muted); font-size: 0.9375rem;">Идваме с платформа, ако колата не се движи.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">4. Финализираме на място</h3>
+                <p style="color: var(--text-muted); font-size: 0.9375rem;">Проверяваме, потвърждаваме и изплащаме веднага.</p>
+            </div>
+        </section>
+
+        <!-- ================= SCREEN 9: RECYCLING ================= -->
+        <section class="screen" id="screen-recycling">
+            <h1 class="screen-title">Рециклиране</h1>
+            <p class="screen-subtitle">Вярваме в повторната употреба. Всяка запазена част е ресурс, който не трябва да се губи.</p>
+
+            <div class="card">
+                <h3 class="card-title">Защо е важно?</h3>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; line-height: 1.6;">
+                    Всяка година милиони автомобили се бракуват. Голяма част от техните компоненти 
+                    все още са в отлично състояние. Ние вярваме, че тези части могат да получат втори живот.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Нашият принос</h3>
+                <ul style="color: var(--text-muted); font-size: 0.9375rem; line-height: 1.8; padding-left: 20px;">
+                    <li>Изкупуваме стари автомобили</li>
+                    <li>Демонтираме внимателно функционалните части</li>
+                    <li>Продаваме ги на достъпни цени</li>
+                    <li>Намаляваме отпадъците и замърсяването</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= SCREEN 10: PHOTO ESTIMATE ================= -->
+        <section class="screen" id="screen-photo-estimate">
+            <h1 class="screen-title">Оценка по снимки</h1>
+            <p class="screen-subtitle">Изпратете снимки и получете ориентировъчна оценка без ангажимент.</p>
+
+            <div class="card">
+                <form onsubmit="event.preventDefault(); alert('Благодарим! Ще се свържем с вас скоро.'); this.reset();">
+                    <div class="form-group">
+                        <label for="pe-name">Име</label>
+                        <input type="text" id="pe-name" class="form-control" placeholder="Вашето име" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pe-phone">Телефон</label>
+                        <input type="tel" id="pe-phone" class="form-control" placeholder="+359 88 123 4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pe-vehicle">Автомобил</label>
+                        <input type="text" id="pe-vehicle" class="form-control" placeholder="Марка, модел, година" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pe-notes">Допълнителна информация</label>
+                        <textarea id="pe-notes" class="form-control" rows="3" placeholder="Опишете състоянието..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Изпрати заявка</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ---------- BOTTOM NAVIGATION ---------- -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active" data-target="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Начало</span>
+        </a>
+        <a href="#" class="nav-item" data-target="cars">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
+            <span>Коли</span>
+        </a>
+        <a href="#" class="nav-item" data-target="parts">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            <span>Части</span>
+        </a>
+        <a href="#" class="nav-item" data-target="accessories">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span>Аксесоари</span>
+        </a>
+        <a href="#" class="nav-item" data-target="contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Контакти</span>
+        </a>
+    </nav>
+
+    <!-- ---------- SLIDE-IN DRAWER ---------- -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="drawer" id="drawer">
+        <div class="drawer-header">
+            <span class="brand">Меню</span>
+            <button class="icon-btn" id="closeDrawerBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="drawer-nav">
+            <a href="#" class="drawer-link" onclick="appNavigate('about'); return false;">За нас</a>
+            <a href="#" class="drawer-link" onclick="appNavigate('how-it-works'); return false;">Как работим</a>
+            <a href="#" class="drawer-link" onclick="appNavigate('recycling'); return false;">Рециклиране</a>
+            <a href="#" class="drawer-link" onclick="appNavigate('photo-estimate'); return false;">Оценка по снимки</a>
+            <a href="#" class="drawer-link" onclick="appNavigate('home'); return false;">Пълен калкулатор</a>
+        </div>
+        <div class="drawer-footer">
+            <a href="tel:+359881234567">📞 +359 88 123 4567</a>
+            <a href="mailto:info@tuningstoreparts.bg">✉️ info@tuningstoreparts.bg</a>
+        </div>
+    </aside>
+
+    <!-- ---------- MODAL ЗА РЕЗУЛТАТ ---------- -->
+    <div class="modal-overlay hidden" id="resultModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeResultModal()">&times;</button>
+            
+            <div class="modal-header">
+                <h2>Приблизителна цена:</h2>
+                <div class="modal-price" id="result-price">0 — 0 €</div>
+                <p class="modal-vehicle" id="result-vehicle-info">Автомобил</p>
+            </div>
+
+            <form id="request-form" class="modal-form">
+                <div class="form-group">
+                    <label for="req-name">Име <span style="color: red;">*</span></label>
+                    <input type="text" id="req-name" class="form-control" placeholder="Вашето име" required>
+                </div>
+                <div class="form-group">
+                    <label for="req-phone">Телефон <span style="color: red;">*</span></label>
+                    <input type="tel" id="req-phone" class="form-control" placeholder="+359 88 123 4567" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="margin-top: 16px;">Направи Заявка</button>
+                <button type="button" class="btn btn-outline" style="margin-top: 8px;" onclick="closeResultModal()">Отказ</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ---------- SCRIPTS ---------- -->
+    <script src="js/app-config.js"></script>
+    <script src="js/app-router.js"></script>
+    <script src="js/app-calculator.js"></script>
+    <script src="js/app-data.js"></script>
+
+</body>
+</html>
