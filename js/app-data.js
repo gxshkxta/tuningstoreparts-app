@@ -1,5 +1,5 @@
 /* ============================================================
-   TUNINGSTOREPARTS APP — DATA (Products + Search + Filter + Detail)
+   TUNINGSTOREPARTS APP — DATA (Products + Search + Filter)
    ============================================================ */
 
 (function() {
@@ -42,7 +42,6 @@
             + '</a>';
     }
 
-    // Прикачваме event listeners на всички карти
     function attachCardListeners() {
         document.querySelectorAll('.product-card-app').forEach(function(card) {
             card.addEventListener('click', function(e) {
@@ -63,7 +62,6 @@
         var meta = item.make ? (item.make + ' ' + item.model + (item.year ? ' (' + item.year + ')' : '')) : item.category;
         document.getElementById('detail-meta').textContent = meta;
 
-        // Икона в детайла
         var iconBig = isAcc 
             ? '<svg viewBox="0 0 24 24" fill="none" stroke="#2f4f6b" stroke-width="2" style="width:40px;height:40px;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>'
             : '<svg viewBox="0 0 24 24" fill="none" stroke="#2f4f6b" stroke-width="2" style="width:40px;height:40px;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>';
